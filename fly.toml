@@ -1,10 +1,10 @@
-# fly.toml app configuration file generated for web-travel-embedding on 2026-02-26T20:50:54Z
+# fly.toml app configuration file generated for web-travel-embedding on 2026-02-26T21:40:41Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
 app = 'web-travel-embedding'
-primary_region = 'ams'
+primary_region = 'sin'
 
 [build]
 
@@ -20,4 +20,4 @@ primary_region = 'ams'
   memory = '1gb'
   cpu_kind = 'shared'
   cpus = 1
-  memory_mb = 256
+  memory_mb = 512
