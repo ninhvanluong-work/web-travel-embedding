@@ -11,6 +11,6 @@ RUN .venv/bin/pip install -r requirements.txt
 FROM python:3.12.12-slim
 WORKDIR /app
 COPY --from=builder /app/.venv .venv/
-COPY . .
+COPY /app .
 
 CMD ["/app/.venv/bin/python", "-m", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
