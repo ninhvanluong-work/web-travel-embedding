@@ -1,0 +1,9 @@
+### send request to get embedding
+curl -X 'POST' \
+  'https://embed.bcserver.xyz/embed' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: WebTravelEmbeddingKey123456' \
+  -d '{
+  "text": "test"
+}'
