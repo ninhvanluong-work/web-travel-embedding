@@ -13,6 +13,6 @@ async def embed_text(payload: TextInput):
         raise HTTPException(status_code=500, detail=str(e))
 
 
-@router.get("")
+@router.get("/")
 def health():
     return {"health": 1}
