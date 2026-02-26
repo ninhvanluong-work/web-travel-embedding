@@ -13,4 +13,6 @@ WORKDIR /app
 COPY --from=builder /app/.venv .venv/
 COPY /app .
 
+EXPOSE 8080
+
 CMD ["/app/.venv/bin/python", "-m", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
