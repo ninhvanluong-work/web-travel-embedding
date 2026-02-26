@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException
-from embedding import get_embedding, get_behavior_embedding
+from embedding import get_embedding
 from schemas import TextInput
 
 router = APIRouter()
