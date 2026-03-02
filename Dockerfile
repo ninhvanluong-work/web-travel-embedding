@@ -1,5 +1,5 @@
 # --- Stage 1: Builder ---
-FROM python:3.12.12-slim AS builder
+FROM python:3.10-slim AS builder
 
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1
@@ -15,7 +15,7 @@ COPY requirements.txt ./
 RUN .venv/bin/pip install --no-cache-dir -r requirements.txt
 
 # --- Stage 2: Production ---
-FROM python:3.12.12-slim
+FROM python:3.10-slim
 
 WORKDIR /app
 
@@ -27,4 +27,4 @@ ENV PATH="/app/.venv/bin:$PATH"
 
 EXPOSE 8000
 
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
