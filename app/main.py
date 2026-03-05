@@ -1,9 +1,9 @@
-from fastapi import FastAPI, Depends
-from auth import verify_api_key
-from api import router
+from fastapi import FastAPI
+from routers.api import apiRouter 
 
-#check authentication in all routes
-
-#app = FastAPI(dependencies=[Depends(verify_api_key)])
 app = FastAPI()
-app.include_router(router)
+app.include_router(apiRouter)
+
+@app.get("/")
+def home():
+  return {"health": "true"}
