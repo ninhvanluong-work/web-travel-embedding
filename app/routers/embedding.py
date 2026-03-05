@@ -17,7 +17,7 @@ async def embed_text(payload: TextInput):
 @embeddingRouter.post("/video")
 async def embed_video(payload: VideoEmbeddingInput):
     try:
-        vector = get_video_embedding(payload.text)
+        vector = get_video_embedding(payload)
         return {"embedding": vector}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
